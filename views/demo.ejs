@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <% include layout/meta %>
+    <% include layout/style %>
+  </head>
+  <body>
+
+    <h1>内容填充区</h1>
+    <p>Welcome to <%= title %></p>
+    <p>
+        param id is: <%= params.id || 'no id param' %>
+    </p>
+    <p>
+        app.locals._author: <%= _author %>
+    </p>
+
+    <p id="test">
+
+    </p>
+
+    <% include layout/js %>
+    <script src="/javascripts/bundle/browser.js"></script>
+  </body>
+</html>

@@ -1,0 +1,28 @@
+{
+  "name": "express-demo",
+  "version": "0.0.0",
+  "browser": {
+      "libutil-datetime": "../node-widget-pc/util/datetime.js"
+  },
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www",
+    "dev": "SET DEBUG=express-demo:* & node ./bin/www --dev",
+    "product": "npm start"
+  },
+  "dependencies": {
+    "body-parser": "~1.16.0",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.0",
+    "ejs": "^2.5.6",
+    "express": "~4.14.1",
+    "express-graceful-exit": "^0.3.3",
+    "morgan": "~1.7.0",
+    "multer": "^1.3.0",
+    "serve-favicon": "~2.3.2"
+  },
+  "devDependencies": {
+    "babel-preset-env": "^1.2.2",
+    "babelify": "^7.3.0"
+  }
+}
