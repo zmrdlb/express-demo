@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <% include layout/meta %>
+    <% include layout/style %>
+    <style>
+        button {
+            margin: 10px 20px;
+            padding: 10px;
+        }
+    </style>
+  </head>
+  <body>
+
+    <p>
+        alert提示框：
+    </p>
+    <button id="btn-alert-all">传入所有自定义参数</button>
+    <button id="btn-alert-single">简单调用</button>
+
+    <p>
+        confirm提示框：
+    </p>
+    <button id="btn-confirm-all">传入所有自定义参数</button>
+    <button id="btn-confirm-single">简单调用</button>
+
+    <p>
+        loading提示框
+    </p>
+
+    <button id="btn-loading">点我显示loading</button>
+
+    <p>
+        toast提示框
+    </p>
+
+    <button id="btn-toast-all">传入所有自定义参数</button>
+
+    <button id="btn-toast-single">简单调用</button>
+
+    <% include layout/js %>
+
+    <script src="/javascripts/bundle/layer.js?v=1490349970978"></script>
+  </body>
+</html>

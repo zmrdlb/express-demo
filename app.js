@@ -44,7 +44,9 @@ app.use(bodyParser.json()); // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: false })); // for parsing application/x-www-form-urlencoded
 //app.use(multer().array()); // for parsing multipart/form-data
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public'),{
+    maxAge: app.get('env') == 'production'? '30d': 0 //静态文件缓存时间
+}));
 
 app.use('/', index);
 app.use('/users', users);
