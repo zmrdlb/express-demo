@@ -5,21 +5,26 @@ module.exports = function(grunt) {
 
 	//压缩后的代码目录
 	var _product_dir = '../dist/express-demo';
+	var version = Date.now();
 
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
         browserify: {
             options: {
                transform: [
-                	["babelify"]
+					["babelify"],
+					["stringify", {
+						appliesTo: { includeExtensions: ['.html'] },
+        				minify: true
+					}]
                ],
-			   external: ['jquery'] //jquery作为外部引用
+			   external: [] //jquery作为外部引用
             },
 			//开发环境
             develop: {
 				options: {
-					// watch: true,
-                    // keepAlive: true,
+					watch: true,
+                    keepAlive: true,
 					browserifyOptions: {
 	 				   debug: true
 	 			    }
@@ -47,28 +52,64 @@ module.exports = function(grunt) {
 			   src: ['**/*.js'],
 			   dest: _product_dir+'/public/javascripts/bundle',
 			   expand: true,
-			   flatten: true,
 			   ext: '.js'
 		   }
 	   },
 	   //文件复制
 	   copy: {
-		   html: {
+		   apps: {
 			   expand: true,
-			   src: '*.html',
+			   cwd: '.',
+			   src: ['bin/**','public/images/**','routes/**','views/**','.babelrc','.gitignore','app.js','package.json'],
 			   dest: _product_dir
 		   }
-	   }
+	   },
+	   //coreui css打包压缩
+	   cssmin: {
+			minify: {
+				expand: true,
+				cwd: './public/stylesheets/page',
+				src: ['*.css'],
+				dest: _product_dir+'/public/stylesheets/page'
+			}
+	   },
+	   //版本号替换
+	   replace: {
+            dist: {
+                options: {
+                    patterns: [
+                        {
+                            match: 'version',
+                            replacement: version
+                        }
+                    ]
+                },
+                expand: true,
+                cwd: _product_dir + '/views',
+                src: ['**/*.ejs'],
+                dest: _product_dir + '/views'
+
+           }
+	   },
+	   clean: {
+		    options: {
+		        force: true
+		    },
+            dist: [_product_dir+"/*","!"+_product_dir+"/.git"]
+        }
 	});
 
 	grunt.loadTasks(npmdir+"grunt-browserify/tasks");
 	grunt.loadTasks(npmdir+'grunt-contrib-uglify/tasks');
 	grunt.loadTasks(npmdir+'grunt-contrib-copy/tasks');
+	grunt.loadTasks(npmdir+'grunt-replace/tasks');
+	grunt.loadTasks(npmdir+'grunt-contrib-cssmin/tasks');
+    grunt.loadTasks(npmdir+'grunt-contrib-clean/tasks');
 
 	//grunt develop -v --base=D:\mycoderoot\project-frame\tool\node_modules
 	grunt.registerTask('develop', ['browserify:develop']);
 
-	//grunt -v
-	grunt.registerTask('default', ['browserify:product','uglify','copy']);
+	//grunt -v --base=D:\mycoderoot\project-frame\tool\node_modules
+	grunt.registerTask('default', ['clean:dist','copy','browserify:product','uglify','cssmin','replace']);
 
 };

@@ -2,7 +2,35 @@
   "name": "express-demo",
   "version": "0.0.0",
   "browser": {
-      "libutil-datetime": "../node-widget-pc/util/datetime.js"
+    "libutil-datetime": "../node-coreui-pc/js/widget/util/datetime.js",
+    "libutil-deviceevtname": "../node-coreui-pc/js/widget/util/deviceevtname.js",
+    "libutil-resize": "../node-coreui-pc/js/widget/util/resize.js",
+    "libutil-scroll": "../node-coreui-pc/js/widget/util/scroll.js",
+    "libutil-tool": "../node-coreui-pc/js/widget/util/tool.js",
+    "libutil-tpl": "../node-coreui-pc/js/widget/util/tpl.js",
+    "libutil-winresize": "../node-coreui-pc/js/widget/util/winresize.js",
+    "libutil-winscroll": "../node-coreui-pc/js/widget/util/winscroll.js",
+    "libutil-workerControl": "../node-coreui-pc/js/widget/util/workerControl.js",
+    "libutil-csssuport": "../node-coreui-pc/js/widget/util/csssuport.js",
+
+    "liblayer-alert": "../node-coreui-pc/js/widget/ui/layer/alert.js",
+    "liblayer-alertControl": "../node-coreui-pc/js/widget/ui/layer/alertControl.js",
+    "liblayer-alertSingle": "../node-coreui-pc/js/widget/ui/layer/alertSingle.js",
+    "liblayer-baseControl": "../node-coreui-pc/js/widget/ui/layer/baseControl.js",
+    "liblayer-bombLayer": "../node-coreui-pc/js/widget/ui/layer/bombLayer.js",
+    "liblayer-confirm": "../node-coreui-pc/js/widget/ui/layer/confirm.js",
+    "liblayer-confirmControl": "../node-coreui-pc/js/widget/ui/layer/confirmControl.js",
+    "liblayer-confirmSingle": "../node-coreui-pc/js/widget/ui/layer/confirmSingle.js",
+    "liblayer-layer": "../node-coreui-pc/js/widget/ui/layer/layer.js",
+    "liblayer-mask": "../node-coreui-pc/js/widget/ui/layer/mask.js",
+    "liblayer-positionBomb": "../node-coreui-pc/js/widget/ui/layer/positionBomb.js",
+    
+    "core-baseview": "../node-coreui-pc/js/common/base.view.js",
+    "core-ui-alert": "../node-coreui-pc/js/ui/ui.alert.js",
+    "core-ui-confirm": "../node-coreui-pc/js/ui/ui.confirm.js",
+    "core-ui-layer": "../node-coreui-pc/js/ui/ui.layer.js",
+    "core-ui-loading": "../node-coreui-pc/js/ui/ui.loading.js",
+    "core-ui-toast": "../node-coreui-pc/js/ui/ui.toast.js"
   },
   "private": true,
   "scripts": {
@@ -23,6 +51,7 @@
   },
   "devDependencies": {
     "babel-preset-env": "^1.2.2",
-    "babelify": "^7.3.0"
+    "babelify": "^7.3.0",
+    "stringify": "^5.1.0"
   }
 }
