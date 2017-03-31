@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <% include layout/meta %>
+    <% include layout/style %>
+
+  </head>
+  <body>
+
+    <p>
+        本页面展示了使用node-io-fetch组件实现的io请求，请打开开发者工具控制台查看结果
+    </p>
+
+    <p>
+        node-io-fetch浏览器兼容性如下：
+    </p>
+
+    <p>
+        Chrome <br/>
+        Firefox <br/>
+        Safari 6.1+ <br/>
+        Internet Explorer 10+ <br/>
+    </p>
+    <% include layout/js %>
+
+    <script src="/javascripts/bundle/iofetch/index.js?v=@@version"></script>
+  </body>
+</html>

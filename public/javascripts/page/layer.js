@@ -48,6 +48,9 @@ BaseView.register({
 
         $('#btn-loading').on('click',function(){
             _APP.Loading.show();
+            setTimeout(function(){
+                _APP.Loading.hide();
+            },3000);
         });
 
         $('#btn-toast-all').on('click',function(){
