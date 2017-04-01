@@ -17,5 +17,9 @@ router.get('/layer', function(req, res, next) {
 router.get('/iofetch', function(req, res, next) {
     res.render('iofetch', { title: 'node-io-fetch组件使用'});
 });
+/* io 页 */
+router.get('/io', function(req, res, next) {
+    res.render('io', { title: 'io接口调用'});
+});
 
 module.exports = router;

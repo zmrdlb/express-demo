@@ -23,6 +23,8 @@
     "liblayer-layer": "../node-coreui-pc/js/widget/ui/layer/layer.js",
     "liblayer-mask": "../node-coreui-pc/js/widget/ui/layer/mask.js",
     "liblayer-positionBomb": "../node-coreui-pc/js/widget/ui/layer/positionBomb.js",
+    "libio-ioconfig": "../node-coreui-pc/js/widget/io/ioconfig.js",
+    "libio-interio": "../node-coreui-pc/js/widget/io/interio.js",
     "core-baseview": "../node-coreui-pc/js/common/base.view.js",
     "core-ui-alert": "../node-coreui-pc/js/ui/ui.alert.js",
     "core-ui-confirm": "../node-coreui-pc/js/ui/ui.confirm.js",

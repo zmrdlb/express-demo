@@ -1,5 +1,7 @@
 /**
  * 放到自己项目中，统一定义的io处理层
+ *
+ * 使用npm包：node-io-fetch实现
  */
 const {IoConfig,Io} = require('node-io-fetch');
 const extend = require('extend');
@@ -34,7 +36,7 @@ IoConfig.ioparams.beforeSend = function(){
  * io请求结束后
  */
 IoConfig.ioparams.complete = function(){
-    console.log('请求结束')
+    console.log('请求结束');
     // _APP.Loading.hide();
 }
 
