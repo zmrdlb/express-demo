@@ -25,6 +25,7 @@
     "liblayer-positionBomb": "../node-coreui-pc/js/widget/ui/layer/positionBomb.js",
     "libio-ioconfig": "../node-coreui-pc/js/widget/io/ioconfig.js",
     "libio-interio": "../node-coreui-pc/js/widget/io/interio.js",
+    "libio-storage": "../node-coreui-pc/js/widget/io/storage.js",
     "core-baseview": "../node-coreui-pc/js/common/base.view.js",
     "core-ui-alert": "../node-coreui-pc/js/ui/ui.alert.js",
     "core-ui-confirm": "../node-coreui-pc/js/ui/ui.confirm.js",

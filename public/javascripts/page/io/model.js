@@ -4,7 +4,8 @@
  * 使用jquery提供的ajax方法和本身封装的io业务层实现
  */
 const IoConfig = require('libio-ioconfig'),
-      Interio = require('libio-interio');
+      Interio = require('libio-interio'),
+      Storage = require('./storage');
  /**
   * 统一处理未登录
   */
@@ -70,7 +71,7 @@ const IoConfig = require('libio-ioconfig'),
     * }
     @param {Object} urlData 针对url里面有{替换参数名}的情况，传入的键值对应数据
   */
- return {
+ module.exports = {
      /**
       * 获取项目文件目录结构
       * urlData: {
@@ -90,7 +91,19 @@ const IoConfig = require('libio-ioconfig'),
      listdata: function(ioargs,iocall){
          Interio.transRequest($.extend({
              url: basehost+'/listdata',
-             method:'POST'
+             method:'POST',
+             /**
+              * 如果想对接口的数据进行缓存，则进行以下配置
+              *
+              * 数据缓存，暂不区分接口请求参数
+              * @type {Object}
+              */
+             customconfig: {
+                 storage: Storage.listdata //配置缓存对象，必填
+                 //如果请求该接口前，要清楚所有本地缓存，则添加此配置
+                 //如：当前接口是用户登录/退出接口，则清除所有敏感数据
+                 // clearall: true
+             }
          },ioargs),iocall);
      },
 

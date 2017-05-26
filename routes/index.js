@@ -21,5 +21,9 @@ router.get('/iofetch', function(req, res, next) {
 router.get('/io', function(req, res, next) {
     res.render('io', { title: 'io接口调用'});
 });
+/* storage 页 */
+router.get('/storage', function(req, res, next) {
+    res.render('storage', { title: 'storage存储'});
+});
 
 module.exports = router;

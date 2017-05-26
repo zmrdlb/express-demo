@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <% include layout/meta %>
+    <% include layout/style %>
+    <style>
+        input,button,p {
+            margin: 10px 20px;
+        }
+        textarea {
+            width: 400px;
+            height: 200px;
+            border: 1px solid black;
+        }
+    </style>
+  </head>
+  <body>
+
+      <p>
+          采用localStorage进行数据存储，与原生不同的是，新增了过期时间控制
+      </p>
+      <p>
+          打开控制台查看数据
+      </p>
+      <p style="color: red;">
+          如果存储的数据过期了，则输出null
+      </p>
+      <p>
+          点击按钮操作后，可以打开控制台，实时查看localStorage的存储结果
+      </p>
+      <p>
+          过期时间说明：
+      </p>
+      <p>
+          3个月：3M
+          1天: 1D；
+          0.4天: 0.4D；注意：如果是小数，只运行1位小数
+          2小时：2H
+      </p>
+
+      <div>
+          键值：<input type="text" id="keyname" value="ownerdata" />
+      </div>
+      <div>
+          过期时间: <input type="text" id="outdate" value="0.1H" placeholder="1D,0.5M 注意：只支持一位小数" />
+      </div>
+      <div>
+          数据：
+          <textarea id="mydata">
+              {"name":"zmrdlb","sex":0}
+          </textarea>
+      </div>
+      <p style="color: red">
+          注意：第三个按钮点击前，必须点击第一个按钮
+      </p>
+      <div>
+          <button id="createStorage">创建存储对象</button>
+          <button id="setStorage">设置当前项数据</button>
+          <button id="getStorage">获取当前项数据</button>
+          <button id="removeStorage">删除当前项数据</button>
+          <button id="clearStorage">全部清除</button>
+      </div>
+
+    <% include layout/js %>
+    <script src="/javascripts/bundle/storage.js"></script>
+  </body>
+</html>
