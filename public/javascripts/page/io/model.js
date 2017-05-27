@@ -22,7 +22,7 @@ const IoConfig = require('libio-ioconfig'),
      return result.code != 'A0001';
  };
  IoConfig.iocall.fail = function(result){
-     _APP.toast.show(result.errmsg || '网络错误');
+     _APP.Toast.show(result.errmsg || '网络错误');
  };
  IoConfig.iocall.error = function(jqXHR, textStatus, errorThrown){
      _APP.Toast.show(textStatus || '网络错误');
@@ -104,6 +104,14 @@ const IoConfig = require('libio-ioconfig'),
                  //如：当前接口是用户登录/退出接口，则清除所有敏感数据
                  // clearall: true
              }
+         },ioargs),iocall);
+     },
+
+     //登录接口
+     login: function(ioargs, iocall){
+         Interio.transRequest($.extend({
+             url: '/users/login',
+             method:'POST'
          },ioargs),iocall);
      },
 

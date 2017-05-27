@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <% include layout/meta %>
+    <% include layout/style %>
+    <style>
+        .row {
+            margin: 10px;
+        }
+    </style>
+  </head>
+  <body>
+
+    <div>
+        <div class="row">
+            <label for="username">用户名：</label><input type="text" placeholder="用户名" id="username" />
+        </div>
+        <div class="row">
+            <label for="password">用户名：</label><input type="password" placeholder="密码" id="password" />
+        </div>
+        <div class="row">
+            <button id="login">登录</button>
+        </div>
+    </div>
+
+    <% include layout/js %>
+    <script src="/javascripts/bundle/login.js?v=@@version"></script>
+  </body>
+</html>
