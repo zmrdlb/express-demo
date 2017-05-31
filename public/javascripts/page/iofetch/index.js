@@ -1,3 +1,6 @@
+// require('core-js/fn/object/entries');
+require('core-js/es6/promise');
+
 const Model = require('./model'),
       BaseView = require('core-baseview');
 

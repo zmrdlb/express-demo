@@ -57,6 +57,7 @@
   "devDependencies": {
     "babel-preset-env": "^1.2.2",
     "babelify": "^7.3.0",
+    "core-js": "^2.4.1",
     "stringify": "^5.1.0"
   }
 }

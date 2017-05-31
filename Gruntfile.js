@@ -41,6 +41,11 @@ module.exports = function(grunt) {
                 src: ['**/*.js'],
                 dest: _product_dir+'/public/javascripts/bundle'
 			}
+			//单个文件测试
+			// single: {
+            //     src: './public/javascripts/page/iofetch/index.js',
+            //     dest: './public/javascripts/bundle/iofetch/index.js'
+			// }
        },
 	   //压缩
 	   uglify: {
@@ -105,6 +110,9 @@ module.exports = function(grunt) {
 	grunt.loadTasks(npmdir+'grunt-replace/tasks');
 	grunt.loadTasks(npmdir+'grunt-contrib-cssmin/tasks');
     grunt.loadTasks(npmdir+'grunt-contrib-clean/tasks');
+
+	//grunt single -v --base=D:\mycoderoot\project-frame\tool\node_modules
+	// grunt.registerTask('single', ['browserify:single']);
 
 	//grunt develop -v --base=D:\mycoderoot\project-frame\tool\node_modules
 	grunt.registerTask('develop', ['browserify:develop']);

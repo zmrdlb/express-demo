@@ -11,6 +11,11 @@ const extend = require('extend');
  */
 
 /**
+ * 如果data是json，且method不是GET或HEAD，是否将data格式化成form-data数据传递
+ * @type {Boolean}
+ */
+IoConfig.ioparams.isformdata = true;
+/**
  * 业务错误条件配置
  * @param  {[type]} result [description]
  * @return {[type]}        [description]
