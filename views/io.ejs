@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <% include layout/meta %>
+    <% include layout/style %>
+    <style>
+        p {
+            margin: 10px 20px;
+        }
+    </style>
+  </head>
+  <body>
+
+    <p>
+        本页面的io请求，用了自行封装的libio-interio和libio-ioconfig，底层是用的jquery的$.ajax，请打开开发者工具控制台查看结果
+    </p>
+
+    <p style="color: red">
+        为了测试，请现在本工程根目录下运行命令：npm run interstart
+    </p>
+
+    <p>
+        libio-interio和libio-ioconfig，主要实现了以下几点：
+    </p>
+
+    <p>
+        1. 统一处理io接口业务逻辑，用户可根据项目需求自行配置；
+        2. $.ajax调用对用户透明；
+        3. 支持接口数据缓存；
+        4. 支持io接口队列请求，可查看page/io/index.js源码；
+    </p>
+
+    <p style="color: red">
+        其中：接口http://127.0.0.1:8000/listdata 配置了数据缓存功能，缓存1天。
+    </p>
+
+    <p>
+        请查看network：首次请求/listdata接口，发现发送了网络请求；再次刷新页面，发现控制台有数据输出，但是network没有发送
+        /listdata的接口请求。（注：用户可手动删除localStorage的存储，再次刷新页面，即可看到又发送了/listdata的网络请求）
+    </p>
+
+    <% include layout/js %>
+
+    <script src="/javascripts/bundle/io/index.js?v=1496300852103"></script>
+  </body>
+</html>

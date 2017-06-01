@@ -12,7 +12,6 @@
     "libutil-winscroll": "../node-coreui-pc/js/widget/util/winscroll.js",
     "libutil-workerControl": "../node-coreui-pc/js/widget/util/workerControl.js",
     "libutil-csssuport": "../node-coreui-pc/js/widget/util/csssuport.js",
-
     "liblayer-alert": "../node-coreui-pc/js/widget/ui/layer/alert.js",
     "liblayer-alertControl": "../node-coreui-pc/js/widget/ui/layer/alertControl.js",
     "liblayer-alertSingle": "../node-coreui-pc/js/widget/ui/layer/alertSingle.js",
@@ -24,7 +23,9 @@
     "liblayer-layer": "../node-coreui-pc/js/widget/ui/layer/layer.js",
     "liblayer-mask": "../node-coreui-pc/js/widget/ui/layer/mask.js",
     "liblayer-positionBomb": "../node-coreui-pc/js/widget/ui/layer/positionBomb.js",
-    
+    "libio-ioconfig": "../node-coreui-pc/js/widget/io/ioconfig.js",
+    "libio-interio": "../node-coreui-pc/js/widget/io/interio.js",
+    "libio-storage": "../node-coreui-pc/js/widget/io/storage.js",
     "core-baseview": "../node-coreui-pc/js/common/base.view.js",
     "core-ui-alert": "../node-coreui-pc/js/ui/ui.alert.js",
     "core-ui-confirm": "../node-coreui-pc/js/ui/ui.confirm.js",
@@ -35,23 +36,28 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
+    "interstart": "node ./node_modules/node-io-fetch/iointer.js",
     "dev": "SET DEBUG=express-demo:* & node ./bin/www --dev",
     "product": "npm start"
   },
   "dependencies": {
     "body-parser": "~1.16.0",
     "cookie-parser": "~1.4.3",
+    "cookie-session": "^2.0.0-beta.2",
     "debug": "~2.6.0",
     "ejs": "^2.5.6",
     "express": "~4.14.1",
     "express-graceful-exit": "^0.3.3",
+    "extend": "^3.0.0",
     "morgan": "~1.7.0",
     "multer": "^1.3.0",
+    "node-io-fetch": "^1.0.1",
     "serve-favicon": "~2.3.2"
   },
   "devDependencies": {
     "babel-preset-env": "^1.2.2",
     "babelify": "^7.3.0",
+    "core-js": "^2.4.1",
     "stringify": "^5.1.0"
   }
 }
