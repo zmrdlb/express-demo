@@ -15,11 +15,14 @@ var app = express();
 var subapp = express();
 
 //识别环境
-if(process.argv.length >=3 && process.argv[2] == '--dev'){
-    app.set('env','development');
-}else{
-    app.set('env','production');
-}
+// if(process.argv.length >=3 && process.argv[2] == '--dev'){
+//     app.set('env','development');
+// }else{
+//     app.set('env','production');
+// }
+
+//默认是development。等发布到服务器的时候，用pm2管理可以指定process.env.NODE_ENV
+//原来在package.json里面配置了"dev": "SET DEBUG=express-demo:* & node ./bin/www --dev",
 console.log(app.get('env'));
 
 //subapp setting

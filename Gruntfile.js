@@ -65,7 +65,7 @@ module.exports = function(grunt) {
 		   apps: {
 			   expand: true,
 			   cwd: '.',
-			   src: ['bin/**','public/images/**','routes/**','views/**','.babelrc','.gitignore','app.js','package.json'],
+			   src: ['bin/**','public/images/**','routes/**','views/**','.babelrc','.gitignore','app.js'],
 			   dest: _product_dir
 		   }
 	   },
@@ -100,7 +100,7 @@ module.exports = function(grunt) {
 		    options: {
 		        force: true
 		    },
-            dist: [_product_dir+"/*","!"+_product_dir+"/.git"]
+            dist: [_product_dir+"/*","!"+_product_dir+"/.git","!"+_product_dir+"/node_modules","!"+_product_dir+"/package.json"]
         }
 	});
 
