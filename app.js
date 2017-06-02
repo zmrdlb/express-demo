@@ -15,11 +15,14 @@ var app = express();
 var subapp = express();
 
 //识别环境
-if(process.argv.length >=3 && process.argv[2] == '--dev'){
-    app.set('env','development');
-}else{
-    app.set('env','production');
-}
+// if(process.argv.length >=3 && process.argv[2] == '--dev'){
+//     app.set('env','development');
+// }else{
+//     app.set('env','production');
+// }
+// console.log('打印process.argv');
+// console.log(process.argv);
+console.log('打印app.get("env")');
 console.log(app.get('env'));
 
 //subapp setting
