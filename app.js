@@ -20,9 +20,9 @@ var subapp = express();
 // }else{
 //     app.set('env','production');
 // }
-// console.log('打印process.argv');
-// console.log(process.argv);
-console.log('打印app.get("env")');
+
+//默认是development。等发布到服务器的时候，用pm2管理可以指定process.env.NODE_ENV
+//原来在package.json里面配置了"dev": "SET DEBUG=express-demo:* & node ./bin/www --dev",
 console.log(app.get('env'));
 
 //subapp setting
