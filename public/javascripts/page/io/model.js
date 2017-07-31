@@ -6,6 +6,7 @@
 const IoConfig = require('libio-ioconfig'),
       Interio = require('libio-interio'),
       Storage = require('./storage');
+
  /**
   * 统一处理未登录
   */

@@ -61,7 +61,7 @@ IoConfig.ioparams.error = function(error){
  * @param  {[type]} response [description]
  * @return {[type]}          [description]
  */
-IoConfig.ioparams.fail = function(result,response){
+IoConfig.ioparams.fail = function(result){
     if(result.code == 'A0002'){
         _APP.Toast.show('未登录');
     }else{
@@ -71,14 +71,14 @@ IoConfig.ioparams.fail = function(result,response){
 
 /**
  * 调用以下方法的时候，opt如ioparams。但是一般只传以下参数就可以了：
- *   data success
+ *   data then (catch)
  *   以下方法已经统一处理了，如果想覆盖自行传入
  *   beforeSend error fail complete
  */
 module.exports = {
     //listdata接口
     listdata(opt){
-        Io.request(extend(true,{
+        return Io.request(extend(true,{
             request: {
                 method: 'POST'
             },
